@@ -1,0 +1,80 @@
+\section{Домашнє завдання}\marginpar{\framebox{14.03.2014}}
+\begin{center}
+Завдання №1
+\end{center}
+\begin{eqnarray}
+&\cfrac{Y(s)}{R(s)} = \cfrac{10(s+2)}{s^2+8s+15} = W(s)\\
+&y(t) - ?\\
+&s^2 + 8s + 15  = (s+5) (s+3) = 0 \\
+&s_{1,2}  = \asystem{-5\\-3}\\
+&y(s^2 + 8s +15) - 10\cdot R(s+2) = \cfrac{10}5 (s+2)\\
+&y = \cfrac{10(s+2)}{s (s+5)(s+2)}\\
+\end{eqnarray}
+\begin{multline}
+y(t) = \liml_{s\to 0} \cfrac{10(s+2)e^{ts}}{(s+3)(s+5)} + \liml_{s\to-5} \cfrac{10(s+2)e^{ts}}{s(s+3)} +{} \\ {} + \liml_{s\to -3} \cfrac{10(s+2)e^{ts}}{s(s+5)} = \cfrac43 - 3e^{5t}  + \cfrac53 e^{-3t}
+\end{multline}
+\begin{center}
+Завдання №2
+\end{center}
+\begin{eqnarray}
+y(s) = u(s) w(s)\\
+u(s) = \cfrac1{4s}\\
+y(s) = \cfrac{5(s+2)}{8(s+5)s(s+1)^2}
+\end{eqnarray}
+\begin{multline}
+y(t) = \liml_{s\to 0} \cfrac{5(s+2)}{8(s+5)(s+1)^2} e^{st} + \liml_{s\to -1} \cb{\cfrac{5(s+2)}{8(s+5)s} e^{st}}' + \liml_{s\to -5} \cfrac{5(s+2)}{8s(s+1)^2} e^{st} ={}\\ {} =  \cfrac14 + \cfrac2{128}e^{-5t} - \cfrac{35}{128} e^{-t} - \cfrac{5}{32} t\cdot e^{-t}
+\end{multline}
+\begin{center}
+Завдання №3
+\end{center}
+\begin{eqnarray}
+G(s) = \cfrac{1}{s^2+2s+1}\\
+Y(s) - ?; r(t) = 1(t)
+\end{eqnarray}
+\begin{eqnarray}
+\cb{Y(s)+R(s)}\cdot G(s) = Y(s)\\
+Y(s) = \cfrac{G(s)\cdot R(s)}{1-G(s)}\\
+Y(s) = \cfrac{s^2+2s+1}{(s^2+2s+1)(s^2+2s+1-1)}\\
+Y(s) = \cfrac1{s(s^2+2s)} \\
+Y(s) = \cfrac1{s^2(s+2)}\\
+y_1(t) = \liml_{s\to -2} \cfrac{s+2}{s^2(s+2)} e^{st} = \cfrac14 e^{-2t}\\
+y_2(t) = \liml_{s\to 0} \cb{\cfrac{s^2}{s^2(s+2)} e^{st}}' = -\cfrac14\\
+y(t) = \cfrac14\cb{e^{-2t}-1}
+\end{eqnarray}
+\section{Практика}
+\begin{equation}
+X(t) = \begin{pmatrix}
+-3 & 1 \\
+-2 & 0
+\end{pmatrix} x(t) + \vect{0\\1} u(t)
+\end{equation} 
+\begin{equation}
+y(t) = \cb{1;0} x(t)
+\end{equation}
+\begin{multline}
+\Phi(s) = \cb{sI-A}^{-1} = \begin{pmatrix}
+3+s & -1 \\
+2 & s
+\end{pmatrix}^{-1} = \cfrac1{s^2+3s+2}\begin{pmatrix}
+s & 1 \\
+-2 & 3+s
+\end{pmatrix} = {} \\ {} = \begin{pmatrix}
+\cfrac s{(s+2)(s+1)} & \cfrac 1{(s+2)(s+1)} \\
+\cfrac {-2}{(s+2)(s+1)} & \cfrac {3+s}{(s+2)(s+1)}
+\end{pmatrix} = \begin{pmatrix}
+-\cfrac1{s+1} + \cfrac2{s+2} & \cfrac1{s+1} - \cfrac1{s+2}\\
+-\cfrac2{s+1} + \cfrac2{s+2} & \cfrac1{s+1} - \cfrac1{s+2}
+\end{pmatrix}
+\end{multline}
+\begin{equation}
+\Phi(t) = \begin{pmatrix}
+-e^{-t} +2e^{-2t} & e^{-t} - e^{-2t}\\
+-2e^{-t} +2e^{-2t} & e^{-t} - e^{-2t}
+\end{pmatrix}
+\end{equation}
+\begin{equation}
+x(s) = \Phi(s) x(0) - \Phi(s) B U(s)
+\end{equation}
+\begin{equation}
+U(t) = 1
+\end{equation}
